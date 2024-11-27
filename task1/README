@@ -21,14 +21,24 @@ Part 2: Create github repository and test deployment
 Part 3: Start working on the task
 
 1. Think of a guessing game that you like to implement.
+
 2. Modify the app.py file (or create a new one):
 -- At first, don't care about the guessing logic. Create a nice interface.
 -- Make sure you have an input widget for the guesses and check the results against a fixed value. Implement the feedback logic.
--- Now take care of the real guessing logic: a) Initialize a new goal if neccessary, b) Check if guess meets the goal, c) Provide feedback
+-- Now take care of the real guessing logic: 
+    a) Initialize a new goal if neccessary, 
+    b) Check if guess meets the goal, 
+    c) Provide feedback
+
+
 3. Create and update data structures for statistics and chat view (counting guesses, perhaps maintaining a history etc.)
+
 4. Transform your guessing and feedback interface to a chat interface (see https://docs.streamlit.io/develop/api-reference/chat ). Look at https://streamlit.io/generative-ai for a chat example (the OpenAI connection will only be made in part 2 of the task, just look at the overall structure and the data structures)
+
 5. Make your app a multipage app by creating a new file for the navigation (see https://docs.streamlit.io/develop/concepts/multipage-apps/page-and-navigation) and a dummy file for the statistics
+
 6. Add logic to the statistics file
+
 7. Test everything and, if happy, commit, push and deploy!
 
 Part 1 of task 1 is already done with this!

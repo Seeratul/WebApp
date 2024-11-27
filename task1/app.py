@@ -1,18 +1,16 @@
 import streamlit as st
-import random as rand
 
-st.title("Guess the Number between 1 and 100")
 
-st.write("Guess the Number between 1 and 100")
 
-secret_number = rand.choice(range(101))
+# desc of tab
+st.set_page_config(
+    page_title="Hello",
+    page_icon="👋",
+)
 
-st.write("Pssst the Number is ")
-st.write(secret_number)
-user_guess = st.number_input("Pick a number between 1 and 100")
 
-if st.button("Guess?"):
-    if user_guess == secret_number:
-        print("Congrats you did it!")
-else:
-    st.write("Shuttingdown")
+st.markdown("# Guessing Game")
+
+# init multipage app
+pg = st.navigation([st.Page("play.py"), st.Page("stats.py")])
+pg.run()
