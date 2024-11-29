@@ -8,7 +8,8 @@ from funcs import hinter
 
 # funcs
 
-#streamlit run playboy.py
+#streamlit run app.py
+#Rebuilt site so it reruns on each button press.
 
 
 if "restart" not in ss:
@@ -48,9 +49,9 @@ else:
 # init speaker
 introMessage = st.chat_message("assistant")
 introMessage.write("Guess the Number between 1 and 10")
-introMessage.write("You already played "+str(ss.games) +" games")
-introMessage.write("You already guessed " +str(ss.guesses) +" times this game")
-introMessage.write("This not always updating as intended is fine as we will just move it all to a different page that can update on switch")
+# introMessage.write("You already played "+str(ss.games) +" games")
+# introMessage.write("You already guessed " +str(ss.guesses) +" times this game")
+# introMessage.write("This not always updating as intended is fine as we will just move it all to a different page that can update on switch")
 
 
 # UI prompt

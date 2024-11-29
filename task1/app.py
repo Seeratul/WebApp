@@ -12,5 +12,5 @@ st.set_page_config(
 st.markdown("# Guessing Game")
 
 # init multipage app
-pg = st.navigation([st.Page("play.py"), st.Page("stats.py")])
+pg = st.navigation([st.Page("playboy.py"), st.Page("stats.py")])
 pg.run()
