@@ -7,7 +7,8 @@ Part 1: Create and test your development environment
 2. Create a Python Virtual Environment in this directory (see Courseware)
 3. Activate the environment
 4. Install the requirements: pip install -r requirements.txt
-5. Try to run the demo app: streamlit run app.py
+5. Try to run the demo app: streamlit run playboy.py
+                                          play.py
 
 Part 2: Create github repository and test deployment
 
