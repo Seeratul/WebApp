@@ -12,16 +12,24 @@ if "restart" not in ss:
     ss.games = 0
     ss.gwon = 0
     ss.glost = 0
+    ss.effectiveness = [0]
 
 st.markdown("# Stats")
 #st.sidebar.header("Stats")
 introMessage = st.chat_message("assistant")
 introMessage.write("You already played "+str(ss.games) +" games")
 introMessage.write("You already guessed " +str(ss.guesses) +" times this game")
+#introMessage.write(ss.effectiveness)
 
-# chart_data = pd.DataFrame(np.random.randn(20, 3), columns=["a", "b", "c"])
+st.bar_chart(ss.effectiveness)
+# #chart_data = pd.DataFrame((range(1,ss.games),ss.effectiveness))
+# chart_data = pd.DataFrame(
+#         {
+#          "col1": range(1,ss.games),
+#          "col2": np.random.randn(60)
+#         })
 
-# st.bar_chart(chart_data)
+#st.bar_chart(chart_data)
 
 # progress_bar = st.sidebar.progress(0)
 # status_text = st.sidebar.empty()

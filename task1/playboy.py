@@ -18,13 +18,15 @@ if "restart" not in ss:
     ss.games = -1
     ss.gwon = 0
     ss.glost = 0
+    ss.effectiveness = [0]
     
 
 if ss.restart:
-    ss.hint = False
-    ss.secret_number = rand.randint(1, 10)
+    ss.secret_number = rand.randint(1, 100)
     ss.games += 1
     ss.guesses = 0
+    ss.min = 0
+    ss.max = 0
     ss.restart = False
 
 ####
@@ -48,14 +50,14 @@ else:
 #DO not call all your windows message it can make stuff fail, give each window its own name
 # init speaker
 introMessage = st.chat_message("assistant")
-introMessage.write("Guess the Number between 1 and 10")
+introMessage.write("Guess the Number between 1 and 100")
 # introMessage.write("You already played "+str(ss.games) +" games")
 # introMessage.write("You already guessed " +str(ss.guesses) +" times this game")
 # introMessage.write("This not always updating as intended is fine as we will just move it all to a different page that can update on switch")
 
 
 # UI prompt
-user_guess = st.number_input("Pick a number between 1 and 10",min_value=1,max_value=10,step=1)
+user_guess = st.number_input("Pick a number between 1 and 100",min_value=1,max_value=100,step=1)
 
 
 
@@ -67,9 +69,10 @@ if st.button("Guess"):
     if user_guess == ss.secret_number:
         response.write("Well done :)")
         st.balloons()
-        time.sleep(2)
-        #ss.games += 1
+        #time.sleep(2)
+        ss.effectiveness.append(ss.guesses)
         ss.restart = True
+        time.sleep(2)
        
 
     # neg feedback
@@ -77,7 +80,6 @@ if st.button("Guess"):
         #ss.wrong = True
         response.write("Wrong number :(")
         #message.markdown("Would you like a hint?")
-        ss.hint = True
         hinter(user_guess,ss.secret_number,response)
         
 
